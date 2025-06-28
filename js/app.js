@@ -1,11 +1,11 @@
 // Snack 1
-const hamburger = { name: "Cheese Burger", weight: 250 };
-const secondBurger = hamburger;
-secondBurger.name = 'Double Cheese Burger';
-secondBurger.weight = 500;
+// const hamburger = { name: "Cheese Burger", weight: 250 };
+// const secondBurger = hamburger;
+// secondBurger.name = 'Double Cheese Burger';
+// secondBurger.weight = 500;
 
-console.log(hamburger.name); // Double Cheese Burger
-console.log(secondBurger.name ); // Double Cheese Burger
+// console.log(hamburger.name); // Double Cheese Burger
+// console.log(secondBurger.name ); // Double Cheese Burger
 
 /* 
 Senza lanciare il codice, riesci a prevedere cosa viene stampato in console?
@@ -16,17 +16,17 @@ Quanti oggetti sono stati creati in memoria durante l'esecuzione di questo codic
 */ 
 
 // Snack 2
-const hamburger = { 
-	name: "Cheese Burger", 
-	weight: 250,
-	ingredients: ["Cheese", "Meat", "Bread", "Tomato"]
-};
+// const hamburger = { 
+// 	name: "Cheese Burger", 
+// 	weight: 250,
+// 	ingredients: ["Cheese", "Meat", "Bread", "Tomato"]
+// };
 
-const secondBurger = {...hamburger};
-secondBurger.ingredients[0] = "Salad";
+// const secondBurger = {...hamburger};
+// secondBurger.ingredients[0] = "Salad";
 
-console.log(hamburger.ingredients[0]); // salad
-console.log(secondBurger.ingredients[0]); // salad
+// console.log(hamburger.ingredients[0]); // salad
+// console.log(secondBurger.ingredients[0]); // salad
 
 
 /*
@@ -36,3 +36,30 @@ Viene stampato ad entrambi in console la chiave Name con valore Salad che viene 
 Quanti oggetti sono stati creati in memoria durante l'esecuzione di questo codice?
 Sono stati creati 2 oggetti dove secondBurgher è la copia con spreed di hamburger
 */ 
+
+
+// Snack 3 
+
+const hamburger = { 
+	name: "Cheese Burger", 
+	weight: 250,
+	maker: {
+		name: "Anonymous Chef",
+		restaurant: {
+			name: "Hyur's Burgers",
+			address: "Main Street, 123",
+			isOpen: true,
+		},
+		age: 29
+	}
+};
+
+const secondBurger = structuredClone(hamburger);
+const thirdBurger = structuredClone(hamburger);
+
+
+/*
+Quanti oggetti sono stati creati in memoria durante l'esecuzione di questo codice?
+sono sati creati 3 oggetti con dentro altri 2 oggetti un totle di 9 oggetti,
+structuredClone() crea una copia degli oggetti con anche gli oggetti annidati
+ */
