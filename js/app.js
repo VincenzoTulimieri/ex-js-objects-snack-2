@@ -63,3 +63,31 @@ Quanti oggetti sono stati creati in memoria durante l'esecuzione di questo codic
 sono sati creati 3 oggetti con dentro altri 2 oggetti un totle di 9 oggetti,
 structuredClone() crea una copia degli oggetti con anche gli oggetti annidati
  */
+
+// Snack 4
+
+const chef = {
+	name: "Chef Hyur",
+	age: 29,
+	makeBurger: (num = 1) => {
+		console.log(`Ecco ${num} hamburger per te!`);
+	},
+}
+
+const restaurant = {
+	name: "Hyur's Burgers",
+	address: {
+		street: 'Main Street',
+		number: 123,
+	},
+	openingDate: new Date(2025, 3, 11),
+	isOpen: false,
+};
+
+/*
+Qual è il metodo migliore per clonare l’oggetto chef, e perché?
+in questo caso lo spread operetor perchè copia anche la funzione 
+
+Qual è il metodo migliore per clonare l’oggetto restaurant, e perché?
+in questo caso è lo structuredClone() perche permette di copiare anche gli oggetti particolari come new date
+*/
